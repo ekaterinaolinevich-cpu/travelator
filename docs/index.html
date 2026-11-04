@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0E16" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Травелатор — все билеты, брони и планы поездки в одном месте" />
+  <title>Травелатор — вся поездка в одном месте</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='7' fill='%23FF6A4D'/%3E%3Cpath d='M18.2 5.8c-.8-.4-2.4 0-3.6 1.2l-2.8 2.8-6.5-1.4c-.4-.1-.7.1-.9.4l-.2.4c-.2.4-.1.8.2 1l4.7 2.6-1.6 2.4H5.9l-.8.8 2.4 1.5 1.5 2.4.8-.8v-1.6l2.4-1.6 2.6 4.7c.2.3.6.4 1 .2l.4-.2c.3-.2.5-.5.4-.9l-1.4-6.5 2.8-2.8c1.2-1.2 1.6-2.8 1.2-3.6z' fill='%230A0E16'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar" id="topbar">
+      <a class="brand" href="#/overview" aria-label="Травелатор — на главную">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 3.9c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Травелатор</span>
+          <span class="brand-sub">вся поездка в одном месте</span>
+        </span>
+      </a>
+      <button class="trip-pill" id="tripPill" data-action="trips" aria-haspopup="dialog">
+        <span class="trip-pill-dot" aria-hidden="true"></span>
+        <span class="trip-pill-text" id="tripPillText">Токио</span>
+        <svg class="trip-pill-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </header>
+
+    <main class="main" id="main" aria-live="polite"></main>
+
+    <nav class="tabbar" id="tabbar" aria-label="Разделы">
+      <a class="tab" href="#/overview" data-tab="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="m16.2 7.8-2.9 6.5-6.5 2.9 2.9-6.5z"/>
+        </svg>
+        <span>Обзор</span>
+      </a>
+      <a class="tab" href="#/plan" data-tab="plan">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/><path d="M8 14h2M14 14h2M8 17.5h2"/>
+        </svg>
+        <span>План</span>
+      </a>
+      <a class="tab" href="#/docs" data-tab="docs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9a3 3 0 0 1 0 6v1.5A2.5 2.5 0 0 0 5.5 19h13a2.5 2.5 0 0 0 2.5-2.5V15a3 3 0 0 1 0-6V7.5A2.5 2.5 0 0 0 18.5 5h-13A2.5 2.5 0 0 0 3 7.5Z"/><path d="M14 5v2.5M14 16.5V19" stroke-dasharray="1.5 2.5"/>
+        </svg>
+        <span>Документы</span>
+      </a>
+      <a class="tab" href="#/packing" data-tab="packing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3.5" y="7.5" width="17" height="13" rx="3"/><path d="M9 7.5V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5v2"/><path d="M9 11v6M15 11v6"/>
+        </svg>
+        <span>Сборы</span>
+      </a>
+    </nav>
+  </div>
+
+  <button class="fab" id="fab" data-action="addmenu" aria-label="Добавить">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+
+  <div class="sheet-root" id="sheetRoot" aria-hidden="true"></div>
+  <div class="toast-root" id="toastRoot"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
